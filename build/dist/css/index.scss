@@ -51,7 +51,6 @@
 
 body {
   font-family: 'EB Garamond', 'Noto Sans KR', sans-serif;
-  position: relative;
 }
 
 span li button {
@@ -569,7 +568,7 @@ form {
   cursor: pointer;
 }
 
-.person-search .add-room button {
+.person-search .add-room {
   margin-top: 15px;
   background-color: #fff;
   text-align: center;
@@ -579,7 +578,7 @@ form {
   position: relative;
 }
 
-.person-search .add-room button i {
+.person-search .add-room i {
   width: 22px;
   height: 22px;
   font-size: 11px;
@@ -702,8 +701,6 @@ form {
 }
 
 .video .bg-video {
-  position: absolute;
-  top: 0;
   z-index: 1;
   width: 1920px;
   margin: 0 auto;
@@ -725,6 +722,7 @@ form {
 // 룸 소개 영역 시작
 .rooms {
   padding-top: 160px;
+  position: relative;
 }
 
 .rooms .rooms-title {
@@ -746,6 +744,16 @@ form {
 
 .rooms .rooms-item {
   width: 550px;
+  transition: all 1.5s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20%);
+}
+
+.rooms .show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%);
 }
 
 .rooms .magnifique {

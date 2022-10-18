@@ -23,7 +23,7 @@ for (let i = 0; i < searchItem.length; i++) {
   });
 }
 
-// 호텔 예약 닫기
+// 객실 추가
 
 let j = 1;
 addRoom.addEventListener('click', function () {
@@ -59,89 +59,54 @@ addRoom.addEventListener('click', function () {
   }
 });
 
-for (let i = 0; i < deleteRoom.length; i++) {
-  deleteRoom[i].addEventListener('click', function () {
-    console.log('#');
+
+// 비디오 스크롤 애니메이션
+const videoTop = window.pageYOffset - document.querySelector('.video').getBoundingClientRect().bottom;
+const leftDoor = document.querySelector('.is-left');
+const rightDoor = document.querySelector('.is-right');
+
+
+window.addEventListener('scroll', videoScroll);
+
+
+function videoScroll() {
+  const scrolled = window.scrollY;
+  if (scrolled > videoTop) {
+    leftDoor.style.transform = `translate3d(${scrolled * -0.05}%, 0px, 0px)`;
+    rightDoor.style.transform = `translate3d(${scrolled * 0.05}%, 0px, 0px)`;
+    if (scrolled * 0.05 > 101) {
+      leftDoor.classList.add('complete');
+      rightDoor.classList.add('complete');
+      leftDoor.style.transform = `translate3d(-101%, 0px, 0px)`;
+      rightDoor.style.transform = `translate3d(101%, 0px, 0px)`;
+    } else {
+      leftDoor.classList.remove('complete');
+      rightDoor.classList.remove('complete');
+    }
+  }
+}
+
+// 룸 소개 스크롤 애니메이션
+const roomsItem = document.querySelectorAll('.rooms-item');
+
+
+window.addEventListener('scroll', roomsScroll);
+
+
+function roomsScroll() {
+  const triggerBottom = window.innerHeight;
+
+  roomsItem.forEach(function (box) {
+    const boxTop = box.getBoundingClientRect().top;
+
+    if (boxTop < triggerBottom) {
+      box.classList.add('show');
+    } else {
+      box.classList.remove('show');
+    }
   });
 }
 
-// 달력창
-class DatePicker {
-  monthData = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
-
-  #calenderDate = {
-    data: '',
-    date: 0,
-    month: 0,
-    year: 0,
-  };
-
-  selectedDate = {
-    data: '',
-    date: 0,
-    month: 0,
-    year: 0,
-  };
-
-  dataPickerEl;
-  calanderEl;
-  calanderMonthPrevEl
-  calanderMonthNextEl
-  monthContentPrevEl;
-  monthContentNextEl
-  prevBtnEl;
-  nextBtnEl;
-  calanderDatesEl;
-
-  constructor() {
-    this.initCalendarDate();
-    this.assignElement();
-  }
-
-  initCalendarDate() {
-    const data = new Date();
-    const date = data.getDate();
-    const month = data.getMonth();
-    const year = data.getFullYear();
-    this.#calenderDate = {
-      data,
-      date,
-      month,
-      year,
-    }
-  }
-
-  assignElement() {
-    this.dataPickerEl = document.getElementById('datePicker');
-    this.calanderEl = this.dataPickerEl.querySelector('#calander');
-    this.calanderMonthPrevEl = this.calanderEl.querySelector('#monthPrev');
-    this.calanderMonthNextEl = this.calanderEl.querySelector('#monthNext');
-    this.monthContentPrevEl = this.calanderMonthPrevEl.querySelector('#contentPrev');
-    this.monthContentNextEl = this.calanderMonthNextEl.querySelector('#contentNext');
-    this.prevBtnEl = this.calanderMonthPrevEl.querySelector('#prevMonth');
-    this.nextBtnEl = this.calanderMonthNextEl.querySelector('#nextMonth');
-    this.calanderDatesEl = this.calanderEl.querySelector('#dates');
-  }
-
-  updateMonth() {
-    this.monthContentPrevEl.textContent = `12121`
-  }
-}
-
-new DatePicker();
 
 function modalOpen() {
   sitemap.classList.add('modal-active');

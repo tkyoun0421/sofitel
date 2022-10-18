@@ -23,7 +23,7 @@ for (let i = 0; i < searchItem.length; i++) {
   });
 }
 
-// 호텔 예약 닫기
+// 객실 추가
 
 let j = 1;
 addRoom.addEventListener('click', function () {
@@ -59,22 +59,14 @@ addRoom.addEventListener('click', function () {
   }
 });
 
-for (let i = 0; i < deleteRoom.length; i++) {
-  deleteRoom[i].addEventListener('click', function () {
-    console.log('#');
-  });
-}
-
 
 // 비디오 스크롤 애니메이션
 const videoTop = window.pageYOffset - document.querySelector('.video').getBoundingClientRect().bottom;
 const leftDoor = document.querySelector('.is-left');
 const rightDoor = document.querySelector('.is-right');
 
+
 window.addEventListener('scroll', videoScroll);
-
-
-
 
 
 function videoScroll() {
@@ -97,12 +89,14 @@ function videoScroll() {
 // 룸 소개 스크롤 애니메이션
 const roomsItem = document.querySelectorAll('.rooms-item');
 
+
 window.addEventListener('scroll', roomsScroll);
+
 
 function roomsScroll() {
   const triggerBottom = window.innerHeight;
 
-  roomsItem.forEach((box) => {
+  roomsItem.forEach(function (box) {
     const boxTop = box.getBoundingClientRect().top;
 
     if (boxTop < triggerBottom) {
