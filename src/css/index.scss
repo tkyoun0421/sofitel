@@ -51,7 +51,6 @@
 
 body {
   font-family: 'EB Garamond', 'Noto Sans KR', sans-serif;
-  position: relative;
 }
 
 span li button {
@@ -723,6 +722,7 @@ form {
 // 룸 소개 영역 시작
 .rooms {
   padding-top: 160px;
+  position: relative;
 }
 
 .rooms .rooms-title {
@@ -744,6 +744,16 @@ form {
 
 .rooms .rooms-item {
   width: 550px;
+  transition: all 1.5s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20%);
+}
+
+.rooms .show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%);
 }
 
 .rooms .magnifique {

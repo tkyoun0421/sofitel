@@ -67,11 +67,15 @@ for (let i = 0; i < deleteRoom.length; i++) {
 
 
 // 비디오 스크롤 애니메이션
-const videoTop = document.querySelector('.video').getBoundingClientRect().top;
+const videoTop = window.pageYOffset - document.querySelector('.video').getBoundingClientRect().bottom;
 const leftDoor = document.querySelector('.is-left');
 const rightDoor = document.querySelector('.is-right');
 
 window.addEventListener('scroll', videoScroll);
+
+
+
+
 
 function videoScroll() {
   const scrolled = window.scrollY;
@@ -88,6 +92,25 @@ function videoScroll() {
       rightDoor.classList.remove('complete');
     }
   }
+}
+
+// 룸 소개 스크롤 애니메이션
+const roomsItem = document.querySelectorAll('.rooms-item');
+
+window.addEventListener('scroll', roomsScroll);
+
+function roomsScroll() {
+  const triggerBottom = window.innerHeight;
+
+  roomsItem.forEach((box) => {
+    const boxTop = box.getBoundingClientRect().top;
+
+    if (boxTop < triggerBottom) {
+      box.classList.add('show');
+    } else {
+      box.classList.remove('show');
+    }
+  });
 }
 
 
