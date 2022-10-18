@@ -575,7 +575,7 @@ form {
   cursor: pointer;
 }
 
-.person-search .add-room button {
+.person-search .add-room {
   margin-top: 15px;
   background-color: #fff;
   text-align: center;
@@ -585,7 +585,7 @@ form {
   position: relative;
 }
 
-.person-search .add-room button i {
+.person-search .add-room i {
   width: 22px;
   height: 22px;
   font-size: 11px;
@@ -687,8 +687,6 @@ form {
 }
 
 .video .bg-video {
-  position: absolute;
-  top: 0;
   z-index: 1;
   width: 1920px;
   margin: 0 auto;

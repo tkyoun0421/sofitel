@@ -65,7 +65,31 @@ for (let i = 0; i < deleteRoom.length; i++) {
   });
 }
 
-// 달력창
+
+// 비디오 스크롤 애니메이션
+const videoTop = document.querySelector('.video').getBoundingClientRect().top;
+const leftDoor = document.querySelector('.is-left');
+const rightDoor = document.querySelector('.is-right');
+
+window.addEventListener('scroll', videoScroll);
+
+function videoScroll() {
+  const scrolled = window.scrollY;
+  if (scrolled > videoTop) {
+    leftDoor.style.transform = `translate3d(${scrolled * -0.05}%, 0px, 0px)`;
+    rightDoor.style.transform = `translate3d(${scrolled * 0.05}%, 0px, 0px)`;
+    if (scrolled * 0.05 > 101) {
+      leftDoor.classList.add('complete');
+      rightDoor.classList.add('complete');
+      leftDoor.style.transform = `translate3d(-101%, 0px, 0px)`;
+      rightDoor.style.transform = `translate3d(101%, 0px, 0px)`;
+    } else {
+      leftDoor.classList.remove('complete');
+      rightDoor.classList.remove('complete');
+    }
+  }
+}
+
 
 function modalOpen() {
   sitemap.classList.add('modal-active');
