@@ -65,6 +65,8 @@ for (let i = 0; i < deleteRoom.length; i++) {
   });
 }
 
+// 달력창
+
 function modalOpen() {
   sitemap.classList.add('modal-active');
 }
