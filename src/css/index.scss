@@ -23,8 +23,6 @@
   background-color: #a98524;
 }
 
-// mixin 영역 끝
-
 // 공통영역 css 
 
 .blind {
@@ -103,9 +101,6 @@ a {
   background-size: cover;
 }
 
-
-// 공통 영역 끝
-
 // header 영역 시작
 
 header {
@@ -178,10 +173,6 @@ header {
   position: absolute;
   top: 10px;
 }
-
-
-
-// header 영역 끝
 
 // 모달창 영역 시작
 .sitemap {
@@ -615,7 +606,6 @@ main {
   background-color: #333;
 }
 
-// main 영역 끝
 
 // section 영역 시작
 
@@ -664,7 +654,6 @@ main {
   padding-top: 6px;
 }
 
-// 룸패키지 영역 끝
 // video 영역 시작
 .video {
   margin-top: 160px;
@@ -708,7 +697,6 @@ main {
   width: 100%;
 }
 
-// video 영역 끝
 // 룸 소개 영역 시작
 .rooms {
   padding-top: 160px;
@@ -769,9 +757,6 @@ main {
   padding: 6px 0;
 }
 
-
-
-// 룸 소개 영역 끝
 // banner 영역 시작
 .banner {
   margin-top: 160px;
@@ -812,7 +797,6 @@ main {
   transform: translate(-50%, -50%);
 }
 
-// banner 영역 끝
 // 호텔 인포 영역 시작
 
 .hotel-info {
@@ -911,7 +895,6 @@ main {
   font-size: 16px;
 }
 
-// 호텔 인포 영역 끝
 // 구글맵 영역 시작
 
 .map {
@@ -965,7 +948,6 @@ main {
   padding: 5px 0;
 }
 
-// 구글맵 영역끝
 // 뉴스레터 영역 시작
 
 .newsletter {
@@ -1006,7 +988,6 @@ main {
   @include brand-color;
 }
 
-// 뉴스레터 영역 끝
 // footer 영역 시작
 
 footer {
