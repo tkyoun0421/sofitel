@@ -61,7 +61,7 @@ addRoom.addEventListener('click', function () {
 
 
 // 비디오 스크롤 애니메이션
-const videoTop = window.pageYOffset - document.querySelector('.video').getBoundingClientRect().bottom;
+const videoTop = window.pageYOffset - document.querySelector('.video').getBoundingClientRect().top;
 const leftDoor = document.querySelector('.is-left');
 const rightDoor = document.querySelector('.is-right');
 
