@@ -3,6 +3,10 @@
   text-decoration: none;
 }
 
+body {
+  margin: 0;
+}
+
 div {
   box-sizing: border-box;
   margin: 0;
@@ -37,6 +41,10 @@ input, button, textarea {
 
 address {
   font-style: normal;
+}
+
+fieldset {
+  border: none;
 }
 
 .blind {
@@ -240,7 +248,7 @@ header {
 }
 
 main {
-  margin-top: -105px;
+  margin-top: -150px;
 }
 
 .main-bg {
