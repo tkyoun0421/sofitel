@@ -10,6 +10,33 @@ const personList = document.querySelector(".person-list");
 const deleteRoom = document.querySelectorAll(".delete-room");
 const roomNoite = document.querySelector(".room-notice");
 
+// sub-nav 열기
+const hoverNavLi = document.querySelectorAll('.nav-title');
+const hoverNavLiA = document.querySelectorAll('.nav-title > a');
+const subNavWrap = document.querySelector('.sub-nav-wrap');
+const subNav = document.querySelectorAll('.sub-nav');
+
+
+for (let i = 0; i < hoverNavLi.length; i++) {
+  hoverNavLi[i].addEventListener('mouseout', function() {
+    console.log(i);
+    subNavWrap.classList.remove('on');
+    hoverNavLi[i].classList.remove('on');
+    subNav[i].classList.remove('on');
+    hoverNavLiA[i].classList.remove('on');
+  });
+  hoverNavLi[i].addEventListener('mouseover', function(e) {
+    subNavWrap.classList.add('on');
+    hoverNavLi[i].classList.add('on');
+    subNav[i].classList.add('on');
+    hoverNavLiA[i].classList.add('on');
+    if (e.target.classList.contains('on')) {
+      subNav[i].classList.add('on');
+      hoverNavLiA[i].classList.add('on');
+    }
+  });
+}
+
 // 모달창 열기
 hambuger.addEventListener('click', modalOpen);
 
@@ -18,7 +45,7 @@ sitemapClose.addEventListener('click', modalClose);
 
 // 호텔 예약 열기
 for (let i = 0; i < searchItem.length; i++) {
-  searchItem[i].addEventListener('click', function (e) {
+  searchItem[i].addEventListener('click', function () {
     searchWrap.classList.toggle('search-active');
   });
 }
@@ -61,7 +88,8 @@ addRoom.addEventListener('click', function () {
 
 
 // 비디오 스크롤 애니메이션
-const videoTop = window.pageYOffset - document.querySelector('.video').getBoundingClientRect().top;
+const video = document.querySelector('.video');
+const videoTop = parseInt(video.offsetTop - 1040);
 const leftDoor = document.querySelector('.is-left');
 const rightDoor = document.querySelector('.is-right');
 
@@ -69,11 +97,13 @@ const rightDoor = document.querySelector('.is-right');
 window.addEventListener('scroll', videoScroll);
 
 
+
 function videoScroll() {
-  const scrolled = window.scrollY;
+  const scrolled = parseInt(window.scrollY);
+  const scrollCount = scrolled - videoTop;
   if (scrolled > videoTop) {
-    leftDoor.style.transform = `translate3d(${scrolled * -0.05}%, 0px, 0px)`;
-    rightDoor.style.transform = `translate3d(${scrolled * 0.05}%, 0px, 0px)`;
+    leftDoor.style.transform = `translate3d(${scrollCount * -0.1}%, 0px, 0px)`;
+    rightDoor.style.transform = `translate3d(${scrollCount * 0.1}%, 0px, 0px)`;
     if (scrolled * 0.05 > 101) {
       leftDoor.classList.add('complete');
       rightDoor.classList.add('complete');
@@ -106,7 +136,6 @@ function roomsScroll() {
     }
   });
 }
-
 
 function modalOpen() {
   sitemap.classList.add('modal-active');
