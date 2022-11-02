@@ -26,11 +26,11 @@
 }
 
 body {
-  font-family: "EB Garamond", "Noto Sans KR", sans-serif;
+  font-family: 'EB Garamond', 'Noto Sans KR', sans-serif;
 }
 
 span li button {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 button {
@@ -56,7 +56,7 @@ a {
   font-size: 14px;
   width: 105px;
   height: 38px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .btn-arrow {
@@ -88,13 +88,20 @@ header {
 .gnb {
   background-color: rgba(33, 32, 30, 0.6);
   border-bottom: 1px solid #333;
-  transform: height 0.4s ease;
+  -webkit-transform: height .4s ease;
+          transform: height .4s ease;
 }
 
 .gnb-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px;
   max-width: 1920px;
   height: 50px;
@@ -111,8 +118,12 @@ header {
 
 .gnb .nav {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-right: 30px;
   font-size: 14px;
   padding-left: 7vw;
@@ -120,13 +131,17 @@ header {
 }
 
 .gnb ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .gnb .nav li {
   padding-right: 20px;
   height: 52px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .gnb li a {
@@ -154,7 +169,7 @@ header {
 }
 
 .gnb .gnb-bars li::before {
-  content: "";
+  content: '';
   display: block;
   width: 20px;
   height: 1px;
@@ -164,7 +179,7 @@ header {
 }
 
 .gnb .gnb-bars li::after {
-  content: "";
+  content: '';
   display: block;
   width: 20px;
   height: 1px;
@@ -179,8 +194,14 @@ header {
   left: 0;
   background-color: rgba(33, 32, 30, 0.7);
   width: 100%;
+<<<<<<< HEAD
+=======
+  -webkit-transition: height 0.4s ease;
+  transition: height 0.4s ease;
+>>>>>>> b3e74eeccea77de5ed8dd3c8a0e351b7eaa2b8d1
   height: 0;
-  transition: height 0.5s ease;
+  -webkit-transition: height .5s ease;
+  transition: height .5s ease;
 }
 
 .sub-nav-wrap.on {
@@ -188,16 +209,24 @@ header {
 }
 
 .sub-nav-wrap .sub-nav {
+<<<<<<< HEAD
   max-width: 1280px;
   width: 90%;
+=======
+  max-width: 1200px;
+>>>>>>> b3e74eeccea77de5ed8dd3c8a0e351b7eaa2b8d1
   margin: 0 auto;
   height: 100px;
   overflow: hidden;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 14px;
   opacity: 0;
-  transition: opacity 0.4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
   visibility: hidden;
 }
 
@@ -237,7 +266,8 @@ header {
   background-color: rgba(255, 255, 255, 0.95);
   width: 600px;
   overflow: hidden;
-  transition: all 0.4s ease;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 .sitemap.active {
@@ -287,7 +317,14 @@ header {
 }
 
 .sitemap .sub-wrap ul {
+<<<<<<< HEAD
   font-size: 13px;
+=======
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+>>>>>>> b3e74eeccea77de5ed8dd3c8a0e351b7eaa2b8d1
 }
 
 .sitemap .sub-wrap li {
@@ -315,7 +352,8 @@ main {
   position: absolute;
   top: 80%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .res-form {
@@ -324,21 +362,29 @@ main {
 }
 
 .res-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 20px 0px;
   position: relative;
 }
 
 .res-search .search-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   cursor: pointer;
 }
 
 .res-search .search-item::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: 1px;
@@ -373,8 +419,12 @@ main {
 
 .res-search .edit {
   width: 330px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .res-search .search-item-btn {
@@ -388,17 +438,21 @@ main {
   bottom: 84px;
   left: 0;
   background-color: rgba(255, 255, 255, 0.97);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px;
   border-radius: 15px;
-  transition: all 0.7s ease;
+  -webkit-transition: all .7s ease;
+  transition: all .7s ease;
   opacity: 0;
   visibility: hidden;
 }
 
 .search-active {
   visibility: unset;
-  transform: translateY(-12%);
+  -webkit-transform: translateY(-12%);
+          transform: translateY(-12%);
   opacity: 1;
 }
 
@@ -407,7 +461,7 @@ main {
 }
 
 .date-picker::before {
-  content: "";
+  content: '';
   display: block;
   width: 1px;
   height: 80%;
@@ -418,7 +472,7 @@ main {
 }
 
 .date-picker::after {
-  content: "";
+  content: '';
   display: block;
   width: 1px;
   height: 80%;
@@ -430,8 +484,12 @@ main {
 
 .search-wrap .month-wrap {
   width: 560px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 15px;
 }
 
@@ -461,8 +519,10 @@ main {
 
 .month-wrap .days {
   width: 100%;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
   text-align: center;
   line-height: 35px;
   font-size: 12px;
@@ -470,8 +530,10 @@ main {
 }
 
 .month-wrap .dates {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
   text-align: center;
   font-weight: normal;
   cursor: pointer;
@@ -481,7 +543,7 @@ main {
   display: inline-block;
   font-size: 13px;
   line-height: 30px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
@@ -511,9 +573,15 @@ main {
 }
 
 .person-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px 0;
 }
 
@@ -533,8 +601,11 @@ main {
   line-height: 34px;
   width: 80%;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-size: 14px;
 }
 
@@ -542,18 +613,30 @@ main {
   width: 140px;
   border: 1px solid #e6e6e6;
   border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .person-count .child {
   width: 140px;
   border: 1px solid #e6e6e6;
   border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .person-count .count-view {
@@ -602,7 +685,7 @@ main {
 }
 
 .person-item .delete-room::before {
-  content: "";
+  content: '';
   display: block;
   width: 10px;
   height: 1px;
@@ -610,11 +693,12 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .person-item .delete-room::after {
-  content: "";
+  content: '';
   display: block;
   width: 10px;
   height: 1px;
@@ -622,7 +706,8 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(315deg);
+  -webkit-transform: translate(-50%, -50%) rotate(315deg);
+          transform: translate(-50%, -50%) rotate(315deg);
 }
 
 .person-search .add-room {
@@ -690,14 +775,27 @@ main {
   top: 30px;
 }
 
+<<<<<<< HEAD
 .room-packages-item-wrap {
+=======
+.room-packages .room-packages-item-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+>>>>>>> b3e74eeccea77de5ed8dd3c8a0e351b7eaa2b8d1
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 40px;
 }
 
+<<<<<<< HEAD
 .room-packages-item-wrap a {
   width: calc(33.3333333333% - 20px);
+=======
+.room-packages .room-packages-item-wrap a {
+  width: calc(100% / 3 - 20px);
+>>>>>>> b3e74eeccea77de5ed8dd3c8a0e351b7eaa2b8d1
 }
 
 .room-packages-item {
@@ -730,7 +828,8 @@ main {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  transition: 0.4s ease;
+  -webkit-transition: .4s ease;
+  transition: .4s ease;
 }
 
 .video .door {
@@ -771,9 +870,18 @@ main {
   margin-top: 16px;
 }
 
+<<<<<<< HEAD
 .rooms-item-wrap {
+=======
+.rooms .rooms-item-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+>>>>>>> b3e74eeccea77de5ed8dd3c8a0e351b7eaa2b8d1
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .rooms-item-wrap a {
@@ -782,23 +890,35 @@ main {
 
 .rooms-item {
   width: 550px;
+  -webkit-transition: all 1.5s ease;
   transition: all 1.5s ease;
   opacity: 0;
   visibility: hidden;
+<<<<<<< HEAD
   transform: translateY(20%);
   will-change: contents;
+=======
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+>>>>>>> b3e74eeccea77de5ed8dd3c8a0e351b7eaa2b8d1
 }
 
 .rooms .show {
   opacity: 1;
   visibility: visible;
+<<<<<<< HEAD
   transform: translateY(0%);
   will-change: auto;
+=======
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+>>>>>>> b3e74eeccea77de5ed8dd3c8a0e351b7eaa2b8d1
 }
 
 .magnifique {
   margin: 126px 60px 0 0;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .luxury-lake {
@@ -807,7 +927,8 @@ main {
 
 .club-luxury {
   margin: 126px 0 0 0;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .rooms-item img {
@@ -831,7 +952,7 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.3333333333);
+  background-color: #0005;
   background-blend-mode: darken;
 }
 
@@ -856,7 +977,8 @@ main {
   position: absolute;
   top: 75%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .hotel-info {
@@ -865,8 +987,12 @@ main {
 
 .hotel-info .hotel-info-inner {
   height: 692px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .hotel-info .hotel-info-left {
@@ -878,9 +1004,16 @@ main {
 
 .hotel-info .hotel-info-right {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-left: 10px;
 }
 
@@ -894,7 +1027,7 @@ main {
 }
 
 .hotel-info .info-bg::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -903,7 +1036,8 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: 0.4s ease;
+  -webkit-transition: .4s ease;
+  transition: .4s ease;
 }
 
 .hotel-info .is-studio {
@@ -920,24 +1054,25 @@ main {
 
 .hotel-info .is-studio::before {
   background-image: url("../img/Sofitel-Ambassador-Seoul-Studio.jpg");
-  background-color: rgba(0, 0, 0, 0.3333333333);
+  background-color: #0005;
   background-blend-mode: darken;
 }
 
 .hotel-info .is-guide::before {
   background-image: url("../img/KakaoTalk_20221013_142329005.jpg");
-  background-color: rgba(0, 0, 0, 0.3333333333);
+  background-color: #0005;
   background-blend-mode: darken;
 }
 
 .hotel-info .is-dining::before {
   background-image: url("../img/dining.jpg");
-  background-color: rgba(0, 0, 0, 0.3333333333);
+  background-color: #0005;
   background-blend-mode: darken;
 }
 
 .hotel-info .info-bg:hover::before {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .hotel-info .hotel-info-text {
@@ -988,7 +1123,8 @@ main {
   position: absolute;
   top: 57%;
   left: 16%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .map .map-inner-text {
@@ -1012,10 +1148,16 @@ main {
 }
 
 .newsletter .content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .newsletter .news-title {
@@ -1045,12 +1187,12 @@ main {
 
 footer {
   margin-top: 160px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   padding: 56px 0;
 }
 
 footer .footer-menu::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
@@ -1064,7 +1206,7 @@ footer li.is-point {
 }
 
 footer ul::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
@@ -1088,6 +1230,7 @@ footer .copyright {
   font-size: 12px;
   color: #666666;
 }
+<<<<<<< HEAD
 
 @media screen and (max-width: 1280px) {
   .title {
@@ -1203,3 +1346,6 @@ footer .copyright {
     margin-top: 100px;
   }
 }/*# sourceMappingURL=index.css.map */
+=======
+/*# sourceMappingURL=index.css.map */
+>>>>>>> b3e74eeccea77de5ed8dd3c8a0e351b7eaa2b8d1
