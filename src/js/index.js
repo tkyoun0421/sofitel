@@ -1,63 +1,93 @@
-const hambuger = document.querySelector(".gnb-bars");
-const sitemap = document.querySelector(".sitemap");
-const sitemapClose = document.querySelector(".sitemap .close");
-const searchItem = document.querySelectorAll(".search-item");
-const searchWrap = document.querySelector(".search-wrap");
-const body = document.querySelector("body");
-const addRoom = document.querySelector(".add-room");
-const personItem = document.querySelector(".person-item");
-const personList = document.querySelector(".person-list");
-const deleteRoom = document.querySelectorAll(".delete-room");
-const roomNoite = document.querySelector(".room-notice");
-
 // sub-nav 열기
 const hoverNavLi = document.querySelectorAll('.nav-title');
 const hoverNavLiA = document.querySelectorAll('.nav-title > a');
 const subNavWrap = document.querySelector('.sub-nav-wrap');
 const subNav = document.querySelectorAll('.sub-nav');
 
+addClassSubNav();
+removeClassSubNav();
 
-for (let i = 0; i < hoverNavLi.length; i++) {
-  hoverNavLi[i].addEventListener('mouseout', function() {
-    console.log(i);
-    subNavWrap.classList.remove('on');
-    hoverNavLi[i].classList.remove('on');
-    subNav[i].classList.remove('on');
-    hoverNavLiA[i].classList.remove('on');
-  });
-  hoverNavLi[i].addEventListener('mouseover', function(e) {
-    subNavWrap.classList.add('on');
-    hoverNavLi[i].classList.add('on');
-    subNav[i].classList.add('on');
-    hoverNavLiA[i].classList.add('on');
-    if (e.target.classList.contains('on')) {
+function addClassSubNav() {
+  for (let i = 0; i < hoverNavLi.length; i++) {
+    hoverNavLi[i].addEventListener('mouseover', function(event) {
       subNav[i].classList.add('on');
-      hoverNavLiA[i].classList.add('on');
-    }
-  });
+      subNavWrap.classList.add('on');
+      hoverNavLi[i].classList.add('on');
+      hoverNavLiA[i].classList.add('on');  
+      if (event.target.classList.contains('on')) {
+        subNav[i].classList.add('on');
+        subNavWrap.classList.add('on');
+        hoverNavLiA[i].classList.add('on');
+      }
+    });
+  }
 }
 
+function removeClassSubNav() {
+  for (let i = 0; i < hoverNavLi.length; i++) {
+    hoverNavLi[i].addEventListener('mouseout', function() {
+      subNav[i].classList.remove('on');
+      subNavWrap.classList.remove('on');
+      hoverNavLi[i].classList.remove('on');
+      hoverNavLiA[i].classList.remove('on');
+    });
+  }
+}
 // 모달창 열기
-hambuger.addEventListener('click', modalOpen);
+const hambuger = document.querySelector('.gnb-bars');
+const sitemap = document.querySelector('.sitemap');
+const sitemapBg = document.querySelector('.sitemap-bg')
+
+
+hambuger.addEventListener('click', openModal);
+
+
+function openModal() {
+  sitemap.classList.add('active');
+  sitemapBg.classList.add('active');
+}
+
 
 // 모달창 닫기
-sitemapClose.addEventListener('click', modalClose);
+const sitemapClose = document.querySelector('.sitemap .close');
+
+
+sitemapClose.addEventListener('click', closeModal);
+sitemapBg.addEventListener('click', closeModal);
+
+function closeModal() {
+  sitemap.classList.remove('active');
+  sitemapBg.classList.remove('active');
+}
+
 
 // 호텔 예약 열기
+const searchItem = document.querySelectorAll(".search-item");
+const searchWrap = document.querySelector(".search-wrap");
+
+
 for (let i = 0; i < searchItem.length; i++) {
   searchItem[i].addEventListener('click', function () {
     searchWrap.classList.toggle('search-active');
   });
 }
 
-// 객실 추가
 
-let j = 1;
-addRoom.addEventListener('click', function () {
-  j++;
-  if (j <= 3) {
+// 객실 추가
+const addRoom = document.querySelector(".add-room");
+
+
+addRoom.addEventListener('click', makeTemplate);
+
+
+let clickAddRoom = 1;
+function makeTemplate() {
+  const personList = document.querySelector(".person-list");
+  const roomNotice = document.querySelector(".room-notice");
+  clickAddRoom++;
+  if (clickAddRoom <= 3) {
     let template = `
-      <div class="person-subtitle">객실 ${j}</div>
+      <div class="person-subtitle">객실 ${clickAddRoom}</div>
       <div class="person-count">
         <div class="adult">
           <button class="decrease"><span>제외</span><i class="fa-solid fa-minus"></i></button>
@@ -77,33 +107,32 @@ addRoom.addEventListener('click', function () {
     personList.append(newLi);
     newLi.classList.add('person-item');
     addRoom.style.display = 'block';
-    roomNoite.style.display = 'none';
+    roomNotice.style.display = 'none';
   }
-  if (j == 3) {
-    j = 3;
+  if (clickAddRoom == 3) {
+    clickAddRoom = 3;
     addRoom.style.display = 'none';
-    roomNoite.style.display = 'block';
+    roomNotice.style.display = 'block';
   }
-});
+}
 
 
 // 비디오 스크롤 애니메이션
-const video = document.querySelector('.video');
-const videoTop = parseInt(video.offsetTop - 1040);
-const leftDoor = document.querySelector('.is-left');
-const rightDoor = document.querySelector('.is-right');
+window.addEventListener('scroll', scrollVideo);
 
 
-window.addEventListener('scroll', videoScroll);
-
-
-
-function videoScroll() {
+function scrollVideo() {
+  const video = document.querySelector('.video');
+  const videoTop = parseInt(video.offsetTop - 1040);
+  const leftDoor = document.querySelector('.is-left');
+  const rightDoor = document.querySelector('.is-right');
   const scrolled = parseInt(window.scrollY);
   const scrollCount = scrolled - videoTop;
+
+
   if (scrolled > videoTop) {
-    leftDoor.style.transform = `translate3d(${scrollCount * -0.1}%, 0px, 0px)`;
-    rightDoor.style.transform = `translate3d(${scrollCount * 0.1}%, 0px, 0px)`;
+    leftDoor.style.transform = `translate3d(${scrollCount * -0.134}%, 0px, 0px)`;
+    rightDoor.style.transform = `translate3d(${scrollCount * 0.134}%, 0px, 0px)`;
     if (scrolled * 0.05 > 101) {
       leftDoor.classList.add('complete');
       rightDoor.classList.add('complete');
@@ -117,13 +146,11 @@ function videoScroll() {
 }
 
 // 룸 소개 스크롤 애니메이션
-const roomsItem = document.querySelectorAll('.rooms-item');
+window.addEventListener('scroll', scrollRooms);
 
 
-window.addEventListener('scroll', roomsScroll);
-
-
-function roomsScroll() {
+function scrollRooms() {
+  const roomsItem = document.querySelectorAll('.rooms-item');
   const triggerBottom = window.innerHeight;
 
   roomsItem.forEach(function (box) {
@@ -135,12 +162,4 @@ function roomsScroll() {
       box.classList.remove('show');
     }
   });
-}
-
-function modalOpen() {
-  sitemap.classList.add('modal-active');
-}
-
-function modalClose() {
-  sitemap.classList.remove('modal-active');
 }
