@@ -130,7 +130,6 @@ function scrollVideo() {
   const rightDoor = document.querySelector('.is-right');
   const scrolled = parseInt(window.scrollY);
   const scrollCount = scrolled - videoTop;
-  console.log(`scrolled: ${video.clientHeight}`);
 
 
 
