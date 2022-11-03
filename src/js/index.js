@@ -123,7 +123,7 @@ window.addEventListener('scroll', scrollVideo);
 
 function scrollVideo() {
   const video = document.querySelector('.video');
-  const CHANGE_PERCENT = 0.134;
+  const CHANGE_PERCENT = 0.1;
   const videoTop = parseInt(video.offsetTop - video.clientHeight);
   const videoBottom = parseInt(videoTop + video.clientHeight);
   const leftDoor = document.querySelector('.is-left');
