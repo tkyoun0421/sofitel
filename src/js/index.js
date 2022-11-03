@@ -123,17 +123,21 @@ window.addEventListener('scroll', scrollVideo);
 
 function scrollVideo() {
   const video = document.querySelector('.video');
-  const videoTop = parseInt(video.offsetTop - 1040);
+  const CHANGE_PERCENT = 0.134;
+  const videoTop = parseInt(video.offsetTop - video.clientHeight);
+  const videoBottom = parseInt(videoTop + video.clientHeight);
   const leftDoor = document.querySelector('.is-left');
   const rightDoor = document.querySelector('.is-right');
   const scrolled = parseInt(window.scrollY);
   const scrollCount = scrolled - videoTop;
+  console.log(`scrolled: ${video.clientHeight}`);
+
 
 
   if (scrolled > videoTop) {
-    leftDoor.style.transform = `translate3d(${scrollCount * -0.134}%, 0px, 0px)`;
-    rightDoor.style.transform = `translate3d(${scrollCount * 0.134}%, 0px, 0px)`;
-    if (scrolled * 0.05 > 101) {
+    leftDoor.style.transform = `translate3d(${scrollCount * -CHANGE_PERCENT}%, 0px, 0px)`;
+    rightDoor.style.transform = `translate3d(${scrollCount * CHANGE_PERCENT}%, 0px, 0px)`;
+    if (scrolled > videoBottom) {
       leftDoor.classList.add('complete');
       rightDoor.classList.add('complete');
       leftDoor.style.transform = `translate3d(-101%, 0px, 0px)`;
