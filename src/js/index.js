@@ -76,12 +76,11 @@ for (let i = 0; i < searchItem.length; i++) {
 // 객실 추가
 const addRoom = document.querySelector(".add-room");
 
-
-addRoom.addEventListener('click', makeTemplate);
+addRoom.addEventListener('click', createTemplate);
 
 
 let clickAddRoom = 1;
-function makeTemplate() {
+function createTemplate() {
   const personList = document.querySelector(".person-list");
   const roomNotice = document.querySelector(".room-notice");
   clickAddRoom++;
@@ -115,7 +114,6 @@ function makeTemplate() {
     roomNotice.style.display = 'block';
   }
 }
-
 
 // 비디오 스크롤 애니메이션
 window.addEventListener('scroll', scrollVideo);
